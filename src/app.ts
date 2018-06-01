@@ -9,13 +9,11 @@ class App{
     public app: express.Application;
     public appRoutePrv: AppRoutes = new AppRoutes();
     public mongoUrl: string = 'mongodb://' +environment.username +':' +environment.password +environment.mongodb;
-    ;  
-    
     
     constructor() {
         this.app = express();
         this.config(); 
-        this. appRoutePrv.userRoutes(this.app);
+        this.appRoutePrv.userRoutes(this.app);
         this.appRoutePrv.appRoutes(this.app);  
         this.mongoSetup();    
     }
